@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td ><label for="Usename"> Usename:</label></td>
+            <td><input id="Usename" name="Usename" type="text" required/></td>
+
+        </tr>
+        <tr>
+            <td><label for="Password"> Password:</label></td>
+            <td><input id="Password" name="Password" type="password" required/></td>
+        </tr>
+        <tr>
+            <td><label for="City of Empoyment"> City of empoyment:</label></td>
+            <td><input id="City of Empoyment" name="City of Empoyment" type="text" required/</label></td>
+        </tr>
+        <tr>
+            <td><label for="Web sever"> Web sever:</label></td>
+            <td>
+                <select id="Web sever" name="Web sever" type="text" required/>
+                    <option value="f8-fullstack">f8-fullstack</option>
+                    <option value="FPoly">FPoly</option>
+            </td>
+        </tr>
+
+    </table>
+    <br>
+        <table>
+            <tr>
+                <td rowspan="4">
+                    <label>Please specify your role: </label>
+                </td>
+                <td>
+                    <input type="radio" id="Admin" name="Please specify your role" value = "Admin" "/>
+                    <label for="Admin"> Admin</label>
+                </td>
+            <tr>
+                <td>
+                    <input id="Engineer" name="Please specify your role" value = "Engineer" type="radio"/>
+                    <label for="Engineer">Engineer</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="Manager" name="Please specify your role" value = "Manager" type="radio"/>
+                    <label for="Manager">Manager</label>
+                </td>
+            <tr>
+                <td>
+                    <input id="Guest" name="Please specify your role" value = "Guest" type="radio"/>
+                    <label for="Guest">Guest</label>
+                </td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr>
+                <td rowspan="3">
+                    <label>Single Sign-on co the following:</label>
+                </td>
+                <td>
+                    <input id="Mail" name="Please specify your role[]" value = "Mail" type="checkbox"/>
+                    <label for="Mail">Mail</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="Payroll" name="Please specify your role[]" value = "Payroll" type="checkbox"/>
+                    <label for="Payroll">Payroll</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="Self-Service" name="Please specify your role[]" value = "SelfService" type="checkbox"/>
+                    <label for="Self-Service">Sell-service</label>
+                </td>
+            </tr>
+        </table>
+    <button type="button">Login</button>
+    <button type="reset">Reset</button>
+</body>
+</html>
