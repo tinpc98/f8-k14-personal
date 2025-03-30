@@ -1,0 +1,15 @@
+h2 {
+    color: orange;
+}
+p {
+    color: green;
+}
+#k14 {
+    color: pink;
+}
+.f13 p {
+    color: chocolate;
+}
+.f13 > .f14 > p {
+    color: purple;
+}
