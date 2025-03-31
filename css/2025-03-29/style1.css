@@ -5,11 +5,11 @@ p {
     color: green;
 }
 #k14 {
-    color: pink;
+    color: red;
 }
-.f13 p {
+.r1 p {
     color: chocolate;
 }
-.f13 > .f14 > p {
-    color: purple;
+.r2 > p {
+    color: red;
 }
