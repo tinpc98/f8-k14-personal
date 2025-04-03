@@ -1,0 +1,47 @@
+/* css bai 1*/
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+.f1:hover{
+    background-color: #ddd;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+div:hover h2 span{
+    color: #fa8f00;
+}
+div:hover button {
+    color: #fff;
+    background-color: #fa8f00;
+}
+/* css bai 2*/
+div.f2 >p::before {
+    content: '😊';
+    font-weight: bold;
+}
+/* css bai 3*/
+div{
+    line-height: 1.4;
+}
+h2 > p {
+    font-weight: bold;
+}
+.highlight{
+    background-color: darkgray;
+}
+.box {
+    border: 1px solid black; /*vien*/
+    padding: 10px; /* khoang cach giua vien va noi dung*/
+    display: inline-block; /* co ding khung */
+    border-radius: 10px; /*bo goc*/
+    line-height: 1.4;
+}
+body {
+    border: 2px solid #000000;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
