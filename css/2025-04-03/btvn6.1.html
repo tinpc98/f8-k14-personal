@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="
+https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header {
+        position: relative;
+        border-bottom: 1px solid black;
+        background-color: white;
+    }
+    .body-container > ul {
+        position: absolute;
+        right: 400px;
+        top: 10px;
+        z-index: 2;
+    }
+    .body-container > ul > li {
+        position: relative;
+        display: inline-block;
+        padding: 22px;
+
+    }
+    .category-container ul {
+        position: absolute;
+        right: 1200px;
+        top: 35px;
+
+    }
+    .category-container > ul > li {
+        position: relative;
+        display: inline-block;
+
+    }
+    .button-container {
+        position: absolute;
+        right: 100px;
+        top: 30px;
+    }
+    li:hover {
+        cursor: pointer;
+    }
+    .category-list {
+        position: absolute;
+        display: none;
+        border: 1px solid black;
+    }
+    .category-list > li {
+        list-style: none;
+        padding: 10px;
+    }
+header > ul > li:nth-of-type(1):hover.category-list {
+    display: block;
+    }
+    .body-list {
+        position: absolute;
+        display: none;
+        border: 1px solid black;
+    }
+    .body-list > ul > li {
+        list-style: none;
+        padding: 10px;
+    }
+    header > ul > li:nth-of-type(1):hover.body-list,
+    header > ul > li:nth-of-type(2):hover.body-list,
+    header > ul > li:nth-of-type(3):hover.body-list,
+    header > ul > li:nth-of-type(4):hover.body-list,
+    header > ul > li:nth-of-type(5):hover.body-list,
+    header > ul > li:nth-of-type(6):hover.body-list {
+    display: block;
+    }
+</style>
+<body>
+<header>
+    <img height="50px"
+            src="https://rainbowit.net/html/histudy/assets/images/logo/logo.png" alt="study">
+    <div class="category-container">
+        <ul>
+            <li>
+                Category
+                <ul class="category-list">>
+                    <li>college</li>
+                    <li>univesity</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="body-container">
+        <ul>
+            <li>
+                Home
+                <ul class="body-list">
+                    <li>menu</li>
+                    <li>f8</li>
+                    <li>fpt</li>
+                </ul>
+            </li>
+            <li>
+                Courses
+                <ul class="body-list">
+                    <li>menu</li>
+                    <li>f8</li>
+                    <li>fpt</li>
+                </ul>
+            </li>
+            <li>
+                Dashboard
+                <ul class="body-list">
+                    <li>menu</li>
+                    <li>f8</li>
+                    <li>fpt</li>
+                </ul>
+            </li>
+            <li>
+                Page
+                <ul class="body-list">
+                    <li>menu</li>
+                    <li>f8</li>
+                    <li>fpt</li>
+                </ul>
+            </li>
+            <li>
+                Elements
+                <ul class="body-list">
+                    <li>menu</li>
+                    <li>f8</li>
+                    <li>fpt</li>
+                </ul>
+            </li>
+            <li>
+                Blog
+                <ul class="body-list">
+                    <li>menu</li>
+                    <li>f8</li>
+                    <li>fpt</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="button-container">
+        <button>Join Now</button>
+    </div>
+</header>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/*bài 6 bài tập về nhà menu ngang*/
+header {
+    border-bottom: 1px solid black;
+}
+.bt1-container > li {
+    display: inline-block;
+}
+element.style{
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+.container {
+    position: relative;
+    width: 1250px;
+    height: 800px;
+    background-image: url("https://i.ytimg.com/vi/x0fSBAgBrOQ/maxresdefault.jpg");
+    background-size: cover;
+    background-position:center;
+}
+.blurred {
+    position: absolute;
+    top: 190px;
+    left: 500px;
+    color: black;
+    padding: 65px 65px;
+    border-radius: 10px;
+    font-size: 20px;
+    filter: drop-shadow(0px 2px 6px black);
+    backdrop-filter: blur(1px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}.blurred >h2 {
+     verticle-align: top;
+     font-size: 35px;
+     font-weight: bold;
+ }
+/*css bai về nhà buổi 5, bài tập 2*/
+.faq-answer {
+    display: none;
+    padding: 16px;
+    background: white;
+}
+input[type="checkbox"]:checked ~ .faq-answer {
+    display: block;
+}
+input[type="checkbox"] {
+    display: none;
+}
+.faq-question {
+    display: block;
+    background: orange;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.icon::before {
+    content:'+';
+    margin-right: 10px;
+}
+input[type="checkbox"]:checked + .faq-question .icon::before {
+    content:'-';
+    margin-right: 10px;
+}
+/*css bài về nhà buổi 5, bài 3*/
+.header-cad {
+    text-align: center;
+}
+.cad-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+.cad {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.cad-container > .cad > .icon1 {
+    font-size: 40px;
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cad-container > .cad > h3 {
+    margin: 10px 0;
+    font-weight: bold;
+}
+.cad-container > .cad > p {
+    color: black;
+    font-size: 16px;
+}
+.cad-container > .cad > button {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
