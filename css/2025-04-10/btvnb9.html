@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <link href="
+        https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+        " rel="stylesheet">
+    <title>MENU</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+        }
+        .member-table {
+            position: absolute;
+            left: 35%;
+            height: 20%;
+            border-collapse: collapse;
+            width: 60%;
+        }
+        .member-table td {
+            border-top: 1px solid black;
+            padding: 10px;
+        }
+        .member-table tr:first-child td {
+            border-top: none;
+        }
+
+        .header-container {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            padding: 10px;
+            background-color: #555555;
+            color: white;
+        }
+        .header-right .menu {
+            width: 250px;
+            height: 100%;
+            position: absolute;
+            margin: auto;
+        }
+        label.btn {
+            display: inline-block;
+            background-color: green;
+            width: 60px;
+            height: 20px;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        .btn1 {
+            background-color: red;
+            width: 65px;
+            height: 20px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+        .new-menu {
+            position: absolute;
+            top: 130px;
+            left: 590px;
+            border: 1px solid black;
+            height: 230px;
+            width: 320px;
+            display: none;
+        }
+        .header-new-container {
+            color: white;
+            background: black;
+            width: 320px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+        .boder-new-container {
+            color: black;
+            background: white;
+
+        }
+        .boder-new-container div{
+            padding:  8px;
+        }
+
+        .boder-new-container div input{
+            width: 100%;
+            height: 30px;
+        }
+        .button-container {
+            text-align: center;
+            border: none;
+        }
+        div > .button-container > .btn1 {
+            width: 145px;
+            height: 25px;
+        }
+        div > .button-container > .btn {
+            width: 145px;
+            height: 25px;
+        }
+        #toggle-menu:checked ~ .new-menu {
+            display: block;
+        }
+        #toggle-menu {
+            display: none;
+        }
+        .btn1-menu {
+            display: inline-block;
+            background: red;
+            width: 145px;
+            height: 25px;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            cursor: pointer;
+            border: 1px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toggle-menu">
+    <h1>Member</h1>
+    <table class="member-table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Mail</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Dang Tien Hoang</td>
+                <td>hoangdt@gmail.com</td>
+                <td>
+                    <label for="toggle-menu" class="btn"><span class="mdi mdi-pencil"></span>edit</label>
+                    <button for="toggle-menu" class="btn1"><span class="mdi mdi-delete"></span>delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pham Quang Linh</td>
+                <td>linh@gmail.com</td>
+                <td>
+                    <label for="toggle-menu" class="btn"><span class="mdi mdi-pencil"></span>edit</label>
+                    <button class="btn1"><span class="mdi mdi-delete"></span>delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Nguyen Thi Thai Hang</td>
+                <td>hang@gmail.com</td>
+                <td>
+                    <label for="toggle-menu" class="btn"><span class="mdi mdi-pencil"></span>edit</label>
+                    <button class="btn1"><span class="mdi mdi-delete"></span>delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<!--    tao menu phu-->
+   <div class="new-menu">
+       <div class="header-new-container">New member</div>
+       <div class="boder-new-container">
+           <div ><input type="text" placeholder="skill"></div>
+           <div><input type="text" placeholder="name"></div>
+           <div><input type="text" placeholder="email"></div>
+           <div class="button-container">
+               <label for="toggle-menu" class="btn1-menu">Close</label>
+               <button style="background: green; color: white" class="btn">Save</button>
+           </div>
+       </div>
+   </div>
+<!--    -->
+    <div class="header-container">
+        <div class="header-left">
+            <span class="mdi mdi-alpha-f-box"></span>
+            F8 Admin
+        </div>
+        <div class="header-body">Menu</div>
+        <div class="header-right">
+            <ul class="menu">
+                <li>
+                    <span class="mdi mdi-account"></span>
+                    Quản Lý Đơn Hàng
+                </li>
+                <li>
+                    <span class="mdi mdi-account"></span>
+                    Quản Lý Xe
+                    <span class="mdi mdi-menu-down"></span>
+                </li>
+                <li>
+                    <span class="mdi mdi-account"></span>
+                    Quản Lý Dịch Vụ
+                </li>
+                <li>
+                    <span class="mdi mdi-account"></span>
+                    Cài Đặt Khác
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
