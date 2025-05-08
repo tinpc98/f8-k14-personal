@@ -1,0 +1,55 @@
+.main9 {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    align-items: center;
+    gap: 40px;
+    padding: 100px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.logo-main9 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+.column h2 {
+    font-family: "Space Mono";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%; /* 35.2px */
+    text-transform: capitalize;
+    color: #FFF;
+}
+.column p {
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: #CCC;
+}
+@media screen and (max-width: 767px) {
+    .main9 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 767px){
+    .main9 {
+        display: flex;
+        padding: 40px 195px;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        align-self: stretch;
+        text-align: left;
+    }
+
+}

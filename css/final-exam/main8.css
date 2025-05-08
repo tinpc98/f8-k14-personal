@@ -1,0 +1,123 @@
+.subscribe-container {
+    display: flex;
+    border-radius: 20px;
+    overflow: visible;
+    width: fit-content;
+    background-color: transparent; /* màu nền tổng */
+}
+
+.email-input {
+    padding: 12px 26px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 20px 0 0 20px;
+    background: white;
+
+}
+
+.subscribe-button {
+    background-color: #a259ff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    z-index: 1000;
+    margin-left: -18px;
+}
+
+.subscribe-button:hover {
+    background-color: #9127ff;
+}
+.main8 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 40px 60px;
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    width: 1050px;
+    margin: 0 auto;
+    gap: 40px;
+}
+.text-main8 h2{
+    color: white;
+    font-family: "Work Sans";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: capitalize;
+
+}
+.text-main8 p{
+    color: white;
+    font-family: "Work Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    text-transform: capitalize;
+}
+@media screen and (max-width: 991px) {
+    .main8 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        width: 690px;
+        padding: 40px 30px;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .img-main8 {
+        order: 1; /* ảnh lên trước hoặc sau tùy ý */
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-main8 img {
+        width: 300px;
+        height: 280px;
+        border-radius: 12px;
+    }
+
+    .text-main8 {
+        order: 2;
+    }
+
+    .subscribe-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .email-input {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .subscribe-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        border-radius: 20px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .main8 {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        width: 300px;
+        padding: 40px 30px;
+    }
+}

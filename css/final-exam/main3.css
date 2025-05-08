@@ -1,0 +1,153 @@
+.header-main3 {
+    padding-left: 50px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+.header-main3-button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    
+}
+.body-main3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 40px 195px;
+    justify-content: center
+}
+.artists-card {
+    background-color: #3B3B3B;
+    padding: 16px;
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+    width: 240px;
+    height: 238px;
+    font-family: "sans-serif";
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: transparent;
+}
+.ranking {
+    position: relative;
+    background-color: #1a1a1a;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    top: 8px;
+    right: 8px;
+}
+.name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+.sales-info {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #ccc;
+}
+.currency {
+    color: #6c47ff;
+}
+.artists-card .name, .artists-card .sales {
+    background-color: transparent;
+}
+.label-main3 {
+    color: white;
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+@media screen and (max-width: 991px) {
+    .header-main3 h2 {
+        font-family: "Work Sans";
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%; /* 39.2px */
+        text-transform: capitalize;
+    }
+    .header-main3 span {
+        font-family: "Work Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+    }
+    .body-main3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .artists-card {
+        width: 330px;
+        height: 100px;
+        flex-direction: row;
+        display: flex;
+        padding: 12px 16px;
+        align-items: center;
+    }
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .ranking {
+        width: 30px;
+        height: 30px;
+        top: -15px;
+        right: -15px;
+    }
+    .name {
+        left: 50px;
+    }
+    .sales {
+        position: relative;
+        display: flex;
+        gap: 4px;
+    }
+    .label-main3 {
+        position: absolute;
+        top: 20px;
+        left: -60px;
+    }
+    /*.value {*/
+    /*    position: absolute;*/
+    /*    top: 20px;*/
+    /*    left: 70px;*/
+    /*}*/
+    .tablet {
+        display: none;
+    }
+
+}
+@media screen and (max-width: 767px) {
+    .body-main3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .artists-card {
+        width: 330px;
+        height: 100px;
+        flex-direction: row;
+    }
+    .mobile {
+        display: none;
+    }
+}
