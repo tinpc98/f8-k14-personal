@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+    <style>
+        .container {
+            width: 600px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        table thead tr th {
+            border-top: 1px solid #ccc;
+        }
+        td, th {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+            font-size: 20px;
+        }
+        .edit-btn {
+            color: green;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .del-btn {
+            color: red;
+            cursor: pointer;
+        }
+        .text-align-right {
+            text-align: right;
+        }
+        .text-align-center {
+            text-align: center;
+        }
+        .container input {
+            padding: 12px;
+            width: 100%;
+            font-size: 24px;
+        }
+        .search-bar {
+            display: flex;
+            padding: 20px;
+            gap: 10px;
+        }
+        .search-bar button {
+            width: 100px;
+            font-size: 16px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+        #employee-form, #confirm-delete {
+            display: none;
+            border: 1px solid black;
+            padding: 20px;
+            width: 400px;
+            margin: 20px auto;
+            background-color: yellow;
+            border-radius: 10px;
+        }
+        #employee-form h3, #confirm-delete h3 {
+            font-size: 30px;
+            text-align: center;
+            color: red;
+            margin-bottom: 20px;
+        }
+        #employee-form input {
+            width: 380px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 20px;
+        }
+        #employee-form button, #confirm-delete button {
+            width: 100px;
+            font-size: 16px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #employee-form button#cancel-btn {
+            background: red;
+        }
+        #confirm-delete button#btn-yes {
+            background: red;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .button-container button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="search-bar">
+        <input name="search" placeholder="Search employees" />
+        <button id="add-btn">Add New</button>
+    </div>
+    <table cellspacing="0">
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div id="employee-form">
+    <h3 id="form-title">Add New Employee</h3>
+    <input id="input-name" type="text" placeholder="Name">
+    <input id="input-address" type="text" placeholder="Address">
+    <input id="input-age" type="number" placeholder="Age">
+    <div class="button-container">
+        <button id="save-btn">Save</button>
+        <button id="cancel-btn">Cancel</button>
+    </div>
+</div>
+
+<div id="confirm-delete">
+    <h3>Delete Employee</h3>
+    <p>Are you sure you want to delete this employee?</p>
+    <div class="button-container">
+        <button id="btn-yes">Yes</button>
+        <button id="btn-no">No</button>
+    </div>
+</div>
+
+<script>
+    const headers = [
+        { name: 'id', text: 'Id', align: 'center' },
+        { name: 'name', text: 'Name' },
+        { name: 'address', text: 'Address' },
+        { name: 'age', text: 'Age', align: 'right' },
+        { name: 'action', text: 'Action', align: 'center' },
+    ];
+
+    const employees = [
+        {id: 1, name: 'Pham Cong Tin', address: 'Hoai Duc - Ha Noi', age: 27},
+        {id: 2, name: 'Nguyen Nam Tao', address: 'Co Nhue - Ha Noi', age: 27},
+        {id: 3, name: 'Pham Xuan Bac', address: 'Soc Son - Ha Noi', age: 27},
+    ];
+
+    const inputE = document.querySelector('.container input[name="search"]');
+    const addBtn = document.querySelector('#add-btn');
+    const fromE = document.querySelector('#employee-form');
+    const cancelBtn = document.querySelector('#cancel-btn');
+    const saveBtn = document.querySelector('#save-btn');
+    const nameInput = document.querySelector('#input-name');
+    const addressInput = document.querySelector('#input-address');
+    const ageInput = document.querySelector('#input-age');
+
+    let isEditing = false;
+    let editingID = null;
+    let deletingID = null;
+
+    const renderTable = (employeesToShow) => {
+        const tableHeader = document.querySelector('table thead tr');
+        const tableBody = document.querySelector('table tbody');
+        tableHeader.innerHTML = '';
+        tableBody.innerHTML = '';
+
+        headers.forEach(header => {
+            const th = document.createElement('th');
+            th.innerText = header.text;
+            if (header.align) th.className = `text-align-${header.align}`;
+            tableHeader.appendChild(th);
+        });
+
+        employeesToShow.forEach(employee => {
+            const row = document.createElement('tr');
+            headers.forEach(header => {
+                const td = document.createElement('td');
+                if (header.name === 'action') {
+                    const editBtn = document.createElement('span');
+                    const delBtn = document.createElement('span');
+                    editBtn.className = 'mdi mdi-pencil-outline edit-btn';
+                    delBtn.className = 'mdi mdi-trash-can-outline del-btn';
+
+                    editBtn.addEventListener('click', () => {
+                        isEditing = true;
+                        editingID = employee.id;
+                        fromE.style.display = 'block';
+                        document.querySelector('#form-title').innerText = 'Edit Employee';
+                        nameInput.value = employee.name;
+                        addressInput.value = employee.address;
+                        ageInput.value = employee.age;
+                        saveBtn.innerText = 'Edit';
+                    });
+
+                    delBtn.addEventListener('click', () => {
+                        deletingID = employee.id;
+                        document.querySelector('#confirm-delete').style.display = 'block';
+                    });
+
+                    td.appendChild(editBtn);
+                    td.appendChild(delBtn);
+                } else {
+                    td.innerText = employee[header.name];
+                }
+                if (header.align) td.className = `text-align-${header.align}`;
+                row.appendChild(td);
+            });
+            tableBody.appendChild(row);
+        });
+    };
+
+    inputE.addEventListener('input', (e) => {
+        const keyword = e.target.value.toLowerCase();
+        const filtered = employees.filter(emp => emp.name.toLowerCase().includes(keyword));
+        renderTable(filtered);
+    });
+
+    addBtn.addEventListener('click', () => {
+        fromE.style.display = 'block';
+        isEditing = false;
+        editingID = null;
+        document.querySelector('#form-title').innerText = 'Add New Employee';
+        saveBtn.innerText = 'Save';
+        nameInput.value = '';
+        addressInput.value = '';
+        ageInput.value = '';
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        fromE.style.display = 'none';
+    });
+
+    saveBtn.addEventListener('click', () => {
+        const name = nameInput.value.trim();
+        const address = addressInput.value.trim();
+        const age = parseInt(ageInput.value);
+
+        if (!name || !address || isNaN(age)) {
+            alert('Please fill in all fields');
+            return;
+        }
+
+        if (isEditing) {
+            const index = employees.findIndex(e => e.id === editingID);
+            if (index !== -1) {
+                employees[index] = {id: editingID, name, address, age};
+            }
+        } else {
+            const maxID = employees.length ? Math.max(...employees.map(e => e.id)) : 0;
+            employees.push({ id: maxID + 1, name, address, age });
+        }
+
+        renderTable(employees);
+        fromE.style.display = 'none';
+    });
+
+    document.querySelector('#btn-no').addEventListener('click', () => {
+        document.querySelector('#confirm-delete').style.display = 'none';
+        deletingID = null;
+    });
+
+    document.querySelector('#btn-yes').addEventListener('click', () => {
+        if (deletingID !== null) {
+            const index = employees.findIndex(e => e.id === deletingID);
+            if (index !== -1) {
+                employees.splice(index, 1);
+            }
+        }
+        document.querySelector('#confirm-delete').style.display = 'none';
+        renderTable(employees);
+        deletingID = null;
+    });
+
+    renderTable(employees);
+</script>
+</body>
+</html>
