@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ai Là Triệu Phú</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .game-show {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .header span {
+            border: 2px solid black;
+            border-radius: 50%;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            border: 2px solid black;
+        }
+
+        .helps {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            border-right: 2px solid black;
+        }
+
+        .helps .help-btn {
+            width: 30px;
+            height: 30px;
+            border: 2px solid black;
+        }
+
+        .main {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .question {
+            width: 100%;
+            text-align: center;
+            border: 2px solid black;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .answers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .answer-btn {
+            border: 2px solid black;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .bonus {
+            width: 200px;
+            border-left: 2px solid black;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .bonus div {
+            padding: 4px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="game-show">
+    <div class="header">
+        <span>exit</span>
+        <span>50:50</span>
+        <span>call</span>
+        <span>audiences</span>
+        <span>consulting</span>
+        <span>stop</span>
+    </div>
+    <div class="content">
+        <div class="helps">
+            <div class="help-btn"></div>
+            <div class="help-btn"></div>
+            <div class="help-btn"></div>
+            <div class="help-btn"></div>
+        </div>
+        <div class="main">
+            <div class="question">Câu hỏi sẽ hiển thị ở đây</div>
+            <div class="answers">
+                <div class="answer-btn">Đáp án A</div>
+                <div class="answer-btn">Đáp án B</div>
+                <div class="answer-btn">Đáp án C</div>
+                <div class="answer-btn">Đáp án D</div>
+            </div>
+        </div>
+        <div class="bonus">
+            <div>15 150.000.000</div>
+            <div>14 85.000.000</div>
+            <div>13 60.000.000</div>
+            <div>12 40.000.000</div>
+            <div>11 30.000.000</div>
+            <div>10 22.000.000</div>
+            <div>9 14.000.000</div>
+            <div>8 10.000.000</div>
+            <div>7 6.000.000</div>
+            <div>6 3.000.000</div>
+            <div>5 2.000.000</div>
+            <div>4 1.000.000</div>
+            <div>3 600.000</div>
+            <div>2 400.000</div>
+            <div>1 200.000</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,20 +1,14 @@
 .header-main3 {
-    padding-left: 50px;
-    padding-top: 80px;
-    padding-bottom: 60px;
-}
-.header-main3-button {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    text-align: center;
-    
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 80px 236px 80px 236px;
 }
 .body-main3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-    padding: 40px 195px;
+    padding: 0 236px 80px 236px;
     justify-content: center
 }
 .artists-card {
@@ -27,6 +21,11 @@
     height: 238px;
     font-family: "sans-serif";
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.2s;
+}
+.artists-card:hover {
+    cursor: pointer;
+    transform: scale(1.03);
 }
 .avatar {
     width: 120px;

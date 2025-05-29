@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0 , maximum-scale=1.0 , minimum-scale=1.0"  >
+    <link href="
+        https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+        " rel="stylesheet">
+    <title>Title</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            border-bottom: 1px solid #ccc;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+        }
+        img {
+            flex-shrink: 0;
+            flex-basis: 50px;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu > .nav > li:first-child {
+            display: none;
+        }
+        .menu > .nav, .dropdown {
+            display: flex;
+            list-style: none;
+        }
+        .header > ul {
+            position: absolute;
+            right: 50px;
+            top: 0px;
+            z-index: 2;
+        }
+        header > ul > li {
+            display: inline-block;
+            padding: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        header > ul > li:nth-of-type(2):hover .dropdown {
+            display: block;
+        }
+        li:hover {
+            cursor: pointer;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            border: 1px solid #ccc;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+        }
+        .menu > .nav > li {
+            list-style: none;
+            padding: 12px;
+        }
+        .menu > .nav > li::before {
+            padding: 10px;
+            display: none;
+        }
+    @media screen and (max-width: 600px) {
+        #toggle-menu:checked ~ .menu {
+            display: block;
+        }
+        .menu {
+            /*display: none;*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background: #333;
+            display: none;
+        }
+        .menu > .nav {
+            display: block;
+        }
+        .menu > .nav > li {
+            display: block;
+            color: white;
+            width: 100%;
+        }
+        .menu > .nav > li::before {
+            display: inline-block;
+        }
+        .menu-icon {
+            display: block;
+            padding: 16px;
+        }
+        .menu > .nav > li:first-child {
+            display:flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 32px;
+            gap: 10px;
+        }
+    }
+        /*body {*/
+        /*    background-color: red;*/
+        /*}*/
+        /*@media screen and (max-width: 500px) { !*@media thẻ cho sẵn, screen; màn hình, max-width điều chỉnh kích thước khi co màn hình*!*/
+        /*    body { !*điều chỉnh độ rộng theo màn hình*!*/
+        /*        background-color: green;*/
+        /*    }*/
+        /*}*/
+    </style>
+<body>
+    <header>
+        <div class="header-container">
+            <img
+                    alt="logo f8"
+                    width="50px"
+                    src="https://fullstack.edu.vn/assets/f8-icon-lV2rGpF0.png">
+            <input type="checkbox" id="toggle-menu" hidden>
+            <ul class="menu">
+                <div class="nav">
+                    <li class="logo">
+                        <img
+                                alt="logo f8"
+                                width="50"
+                                src="https://fullstack.edu.vn/assets/f8-icon-lV2rGpF0.png">
+                        Admin
+                    </li>
+                    <li class="mdi mdi-home">Home</li>
+                    <li class="mdi mdi-account-outline">
+                        Products
+                        <ul class="dropdown">
+                            <li>phone</li>
+                            <li>tab</li>
+                            <li>laptop</li>
+                        </ul>
+                    </li>
+                    <li class="mdi mdi-sign-language">Customers</li>
+                    <li class="mdi mdi-image-check">About</li>
+                </div>
+            </ul>
+        </div>
+<!--        <div class="menu-footer">-->
+<!--            <div class="mdi mdi-map">Ngõ 41 Trần Duy Hưng</div>-->
+<!--            <div class="mdi mdi-phone">0342582999</div>-->
+<!--        </div>-->
+            <label for="toggle-menu" class="menu-icon mdi mdi-menu"></label>
+        </div>
+    </header>
+</html>

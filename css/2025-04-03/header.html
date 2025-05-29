@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+      border: 1px solid #ccc;
+      position: relative;
+      background-color: white;
+    }
+    header > ul {
+      position: absolute;
+      right: 50px;
+      top: 0px;
+      z-index: 2;
+    }
+    header > ul > li {
+      display: inline-block;
+      padding: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    header > ul > li:nth-of-type(2):hover .dropdown {
+      display: block;
+    }
+    li:hover {
+      cursor: pointer;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 50px;
+      border: 1px solid #ccc;
+    }
+    .dropdown > li {
+      list-style: none;
+      padding: 12px;
+    }
+  </style>
+<body>
+
+  <header>
+    <img
+      alt="logo f8"
+      width="50"
+      src="https://fullstack.edu.vn/assets/f8-icon-lV2rGpF0.png">
+  <ul>
+    <li>home</li>
+    <li>
+      Products
+        <ul class="dropdown">
+          <li>phone</li>
+          <li>tab</li>
+          <li>laptop</li>
+        </ul>
+    </li>
+    <li>Customers</li>
+    <li>About</li>
+  </ul>
+  </header>
+
+</body>
+</html>

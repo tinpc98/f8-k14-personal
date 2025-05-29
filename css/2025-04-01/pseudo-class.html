@@ -1,0 +1,58 @@
+<!--lớp giả-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    input:focus{
+      color:red;
+    }
+    ul li:first-child{
+      color:red;
+    }
+    ul li:last-child{
+      color:blue;
+    }
+    ul li:nth-of-type(2){
+      color:green;
+    }
+    input[type='checkbox'] :checked ~ span {
+      color: red;
+    }
+    input[value='red']:checked ~ span{
+      color:red;
+    }
+    input[value='blue']:checked ~ span{
+      color:blue;
+    }
+    input[value='green']:checked ~ span{
+      color:green;
+    }
+    h1:hover{
+      color:red;
+    }
+    button:active{
+      color:red;
+    }
+  </style>
+</head>
+<body>
+    <h1> Pseudo Class</h1>
+    <input name="username" placeholder="Username" type="text">
+    <ul>
+      <span>hi</span>
+      <li>html</li>
+      <li>css</li>
+      <li>Js</li>
+    </ul>
+    <input type="checkbox">
+    <span>checkbox</span>
+    <input type="radio" name="myRadio" value="red">
+    <input type="radio" name="myRadio" value="blue">
+    <input type="radio" name="myRadio" value="green">
+    <span>checkbox</span>
+    <br>
+<button>click me</button>
+</body>
+</html>

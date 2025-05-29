@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+<style>
+    .input-group {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px 12px;
+        border-radius: 4px;
+        background-color: #f7f7f7;
+    }
+    .icon-tooltip {
+        color: #555;
+        margin-right: 10px;
+        cursor: help;
+        font-size: 14px;
+    }
+    .input-group input {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 14px;
+        color: #333;
+    }
+    .clear-icon {
+        color: #aaa;
+        font-size: 16px;
+        margin-left: 8px;
+        cursor: default; /* không làm gì khi click */
+    }
+    .input-group i {
+        color: #999;
+        margin-right: 10px;
+    }
+    .input-group input,
+    .input-group textarea {
+        border: none;
+        background: none;
+        outline: none;
+        width: 100%;
+        font-size: 14px;
+    }
+    .input-group {
+        align-items: flex-start;
+    }
+
+    .input-group textarea {
+        resize: none;
+        height: 100px;
+    }
+    .copy-checkbox {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #333;
+    }
+    .send-btn {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        transition: background 0.3s;
+    }
+
+    .send-btn:hover {
+        background-color: #c0392b;
+    }
+
+</style>
+<body>
+    <h1>Hey there</h1>
+        <p>We'd like to here from you. Send us your message or just say hy with our contact from or directly via phone, we love to chat.</p>
+    <div class="input-group">
+        <span class="icon-tooltip" tile="Enter your name">
+            <i class="fa fa-user"></i>
+        </span>
+        <input type="text" placeholder="Your name">
+        <span class="clear-icon">x</span>
+    </div>
+    <br>
+    <div class="input-group">
+        <i class="fa fa-envelope"></i>
+        <input id="email" placeholder="Your@domain.com" type="email" required>
+    </div>
+    <br>
+    <div class="input-group">
+        <i class="fa fa-phone"></i>
+        <input id="phone" placeholder="+44 00 123" type="tel" required>
+    </div>
+    <br>
+    <div class="input-group">
+        <i class="fa fa-book"></i>
+        <input id="subject" placeholder="Subject" type="text" required>
+    </div>
+    <br>
+    <div class="input-group">
+        <i class="fa fa-comment"></i>
+        <textarea id="message" placeholder="Message" type="text" required>
+            </textarea>
+    </div>
+    <br>
+    <label class="copy-checkbox">
+        <input type="checkbox"> Send me a copy of this message
+    </label>
+    <button class="send-btn">SEND</button>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+/*<!--        selector{
+                    css code}>*/
+    /*selector: tag name/class name/id name*/
+p{
+    color: green;
+}
+/*#k14 {*/
+/*    color: aqua;*/
+/*}*/
+/*.ex03 > p {*/
+/*    color: red;*/
+/*}*/
+/*.ex03 > .ex03-01 > p {*/
+/*    color: chocolate;*/
+/*}*/
+#k14 {
+    color: blue;
+}

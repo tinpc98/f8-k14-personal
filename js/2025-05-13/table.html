@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="
+https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+" rel="stylesheet">
+</head>
+<style>
+    table {
+        width: 600px;
+        margin: auto;
+    }
+    td, th {
+        padding: 12px;
+        border: 1px solid #ccc;
+        font-size: 20px;
+    }
+    .edit-btn {
+        color: green;
+    }
+    .del-btn {
+        color: red;
+    }
+    .text-align-center {
+        text-align: center;
+    }
+    .text-align-right {
+        text-align: right;
+    }
+</style>
+<body>
+  <table width="100%" border="1" cellspacing="0">
+    <thead>
+        <tr></tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+<script>
+  // const headers = ['ID', 'Name', 'address', 'age']
+  const headers = [
+    {name: 'id', text: 'ID'},
+    {name: 'name', text: 'Name'},
+    {name: 'address', text: 'address'},
+    {name: 'age', text: 'age', testify: 'text-align-right'},
+    {name: 'action', text: 'action'}
+  ]
+
+  const employees = [
+    {id: 1, name: 'Pham Cong Tin', address: 'Hoai Duc - Ha Noi', age: 27},
+    {id: 2, name: 'Tran Xuan Bang', address: 'Dong Anh - Ha Noi', age: 27},
+    {id: 3, name: 'Pham Cong Viet', address: 'Co Nhue - Ha Noi', age: 27},
+    ]
+  const tableHeaderE = document.querySelector('table thead tr')
+  console.log(tableHeaderE)
+  headers.forEach(header => {
+      const  cell = document.createElement('th')
+      cell.innerText = header.text
+      tableHeaderE.append(cell)
+  })
+
+  const  tableBodyE = document.querySelector('table tbody')
+  employees.forEach(employee => {
+      const  row = document.createElement('tr')
+      headers.forEach(header => {
+         const cell = document.createElement('td')
+         if (header.name === 'action') {
+             const editBtn = document.createElement('span')
+             const delBtn = document.createElement('span')
+
+             editBtn.setAttribute('class', 'mdi mdi-pencil-outline edit-btn')
+             delBtn.setAttribute('class', 'mdi mdi-delete-outline del-btn')
+             cell.appendChild(editBtn)
+             cell.appendChild(delBtn)
+         } else {
+             cell.innerText = employee[header.name]
+         }
+         if (header.align) cell.setAttribute('class', 'text-align- + ${header.align}')
+         row.append(cell)
+     })
+      tableBodyE.append(row)
+  })
+
+
+</script>
+</body>
+</html>

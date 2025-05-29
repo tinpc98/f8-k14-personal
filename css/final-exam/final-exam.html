@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="main7.css">
     <link rel="stylesheet" href="main8.css">
     <link rel="stylesheet" href="main9.css">
+    <link rel="stylesheet" href="log_in.css">
     <link href="
         https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
         " rel="stylesheet">
@@ -28,27 +29,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>final-exam</title>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-logo">
-                <img src="img/Storefront.png">
-                NFT Marketplace
-            </div>
-
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox"/>
-            <label for="menu-toggle" class="menu-icon">
-                <span class="mdi mdi-menu"></span>
-            </label>
-
-            <nav class="header-menu">
                 <ul class="d-flex">
+                    <li><img src="img/Storefront.png"></li>
+                    <li>NFT Marketplace</li>
+                </ul>
+            </div>
+            <div class="tablet-menu">
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox"/>
+                <label for="menu-toggle" class="menu-icon">
+                    <span class="mdi mdi-menu"></span>
+                </label>
+            </div>
+            <nav class="header-menu">
+                <ul class="d-flex1">
                     <li class="pa-4"><a href="#"> Maketplace</a></li>
                     <li class="pa-4"><a href="#">Rankings</a></li>
                     <li class="pa-4"><a href="#">Connect a wallet</a></li>
-                    <button class="mdi mdi-account-badge-outline">Sign Up</button>
+                    <li class="pa-4"></li>
+                        <button class="mdi mdi-account-badge-outline button-secondary">Sign Up</button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -59,8 +66,8 @@
                 <h2 class="font-size-67 font-family font-style">Discover Digital art & Collect NFTs</h2>
                 <span class="font-style font-size-22 font-weight-bold line-height">NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.</span>
             </div>
-            <div class="button-container">
-                <button class="mdi mdi-rocket-launch-outline">Get Started</button>
+            <div>
+                <button class="mdi mdi-rocket-launch-outline button-container">Get Started</button>
             </div>
             <div class="bellow-main">
                 <div>
@@ -79,7 +86,7 @@
         </div>
         <div class="main-right-content">
             <div class="nft-card">
-                <img src="img/Image Placeholder.png" height="401" width="510" class="ntf-img"/>
+                <img src="img/Image Placeholder.png" class="ntf-img"/>
                 <div class="nft-info">
                     <h5 class="font-family font-size-22 font-style line-height color-white">Space Walking</h5>
                     <div class="nft-artist d-flex color-white gap-10 font-size-16 font-style line-height font-weight-400">
@@ -90,13 +97,13 @@
             </div>
         </div>
     </main>
-    <main>
+    <main class="main2">
         <div class="main2-header">
             <h2 class="font-family font-size-38 font-style font-weight-600 line-height-120 text-transform-uppercase color-white">Trending Collection</h2>
             <p class="font-size-22 font-family font-style font-weight-400 line-height-160 text-transform-uppercase color-white">Checkout our weekly updated trending collection.</p>
         </div>
         <div class="main2-container">
-            <div>
+            <div class="Dsgn-Animals">
                 <img src="img/Primary%20Photo%20Placeholder%20Dog.png" height="330" width="330">
                 <div class="main2-thumbnails">
                     <img src="img/Secondary%20Photo%20Placeholder.png" height="100" width="100">
@@ -110,7 +117,7 @@
                         <span>MrFox</span></div>
                     </div>
             </div>
-            <div class="main2-mobile">
+            <div class="Magic-Mushrooms main2-mobile">
                 <img src="img/Primary%20Photo%20Placeholder.png" height="330" width="330">
                 <div class="main2-thumbnails">
                     <img src="img/Secondary%20Photo%20Placeholder3.png" height="100" width="100">
@@ -125,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <div class="main2-taple main2-mobile">
+            <div class="Disco-Machines main2-taple main2-mobile">
                 <img src="img/Primary%20Photo%20Placeholder%20Robot.png" height="330" width="330">
                 <div class="main2-thumbnails">
                     <img src="img/Secondary%20Photo%20Placeholder4.png" height="100" width="100">
@@ -144,10 +151,12 @@
     </main>
     <main class="main3">
         <div class="header-main3">
-            <h2 class="font-family font-size-38 font-style font-weight-400 line-height-160 text-transform-uppercase color-white">Top creators</h2>
-            <span class="font-family font-size-22 font-style font-weight-400 line-height-160 text-transform-uppercase color-white">Checkout Top Rated Creators on the NFT Marketplace</span>
-            <div class="header-main3-button">
-                <button class="mdi mdi-rocket-launch-outline">View Rankings</button>
+            <div>
+                <h2 class="font-family font-size-38 font-style font-weight-400 line-height-160 text-transform-uppercase color-white">Top creators</h2>
+                <span class="font-family font-size-22 font-style font-weight-400 line-height-160 text-transform-uppercase color-white">Checkout Top Rated Creators on the NFT Marketplace</span>
+            </div>
+            <div>
+                <button class="button-View-Rankings mdi mdi-rocket-launch-outline">View Rankings</button>
             </div>
         </div>
         <div class="body-main3">
@@ -319,16 +328,22 @@
     </main>
     <main>
         <div class="header-main5">
-            <h2>Discover More NFTs</h2>
-            <p>Explore new trending NFTs</p>
-            <button class="mdi mdi-eye">See All</button>
+            <div>
+                <h2>Discover More NFTs</h2>
+                <span>Explore new trending NFTs</span>
+            </div>
+            <div>
+                <button class="button-View-Rankings mdi mdi-eye">See All</button>
+            </div>
         </div>
         <div class="body-main5">
             <div class="card-main5">
                 <div class="background-main5"><img src="img-main5/Avatar%20Placeholder%20main5%20(2).png"></div>
                 <div class="first">NTF Name</div>
-                <img src="img-main5/Avatar%20Placeholder%20main5%20(1).png">
-                <div class="name">NTF Artist</div>
+                <div class="name">
+                    <img src="img-main5/Avatar%20Placeholder%20main5%20(1).png">
+                    NTF Artist
+                </div>
                 <div class="back1-main5">
                     <span>Prince</span>
                     <span>1.63 ETH</span>
@@ -341,8 +356,10 @@
             <div class="card-main5">
                 <div class="background-main5"><img src="img-main5/Image%20Placeholder%20(1)%20main5.png"></div>
                 <div class="first">NTF Name</div>
-                <img src="img-main5/Avatar%20Placeholder%20main5%20(1).png">
-                <div class="name">NTF Artist</div>
+                <div class="name">
+                    <img src="img-main5/Avatar%20Placeholder%20main5%20(1).png">
+                    NTF Artist
+                </div>
                 <div class="back1-main5">
                     <span>Prince</span>
                     <span>1.63 ETH</span>
@@ -355,8 +372,10 @@
             <div class="card-main5 tablet">
                 <div class="background-main5"><img src="img-main5/Image%20Placeholder%20(2)%20main5.png"></div>
                 <div class="first">NTF Name</div>
-                <img src="img-main5/Avatar%20Placeholder%20main5%20(1).png">
-                <div class="name">NTF Artist</div>
+                <div class="name">
+                    <img src="img-main5/Avatar%20Placeholder%20main5%20(1).png">
+                    NTF Artist
+                </div>
                 <div class="back1-main5">
                     <span>Prince</span>
                     <span>1.63 ETH</span>
@@ -369,10 +388,10 @@
         </div>
     </main>
     <main class="main6">
-        <div class="img-main6">
-            <img src="img-main6/Screen-Tablet.png">
+        <div class="img-main6" style="background-image: url('img-main6/Screen-Tablet.png')">
+<!--        <img src="img-main6/Screen-Tablet.png">-->
         </div>
-<!--            <div class="overlay-content">-->
+            <div class="overlay-content">
                 <div class="shroomie">
                     <img src="img-main6/Avatar Placeholder-main6.png" height="24" width="24" alt="Avatar" />
                     <span>Shroomie</span>

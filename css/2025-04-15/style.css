@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body {
+    font-family: "Dosis", sans-serif;
+}
+.container{
+    max-width: 1192px;
+    margin: auto;
+}
+.primary-font-family {
+    font-family: "Great Vibe", cursive;
+}
+.primary-color {
+    color: #9ec2bb;
+}
+.d-block {
+    display: block;
+}
+.d-inline-block {
+    display: inline-block;
+}
+.d-flex {
+    display: flex;
+}
+.align-items-center {
+    align-items: center;
+}
+.justify-content-space-between { /*dan layout giua body va nav*/
+    justify-content: space-between;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.pa-4 {
+    padding: 8px;
+}
+.pa-10 {
+    padding: 20px;
+}
+.font-size-24{
+    font-size: 24px;
+}
+.font-size-48{
+    font-size: 48px;
+}
+.text-align-center {
+    text-align: center;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-basic-50-percent {
+    flex-basis: 50%;
+}
+.red-color {
+    color: red;
+}
+@media  screen and (max-width: 768px) {
+    .flex-basic-50-percent {
+        flex-basis: 100%;
+    }
+}

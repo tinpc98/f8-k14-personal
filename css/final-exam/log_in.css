@@ -1,0 +1,126 @@
+.button-Primary {
+    color: white;
+    background: #A259FF;
+    border: none;
+    border-radius: 20px;
+    display: inline-flex;
+    height: 72px;
+    padding: 0px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+.button-Primary:hover {
+    background: rgba(193, 4, 255, 0.94);
+    cursor: pointer;
+}
+.button-secondary {
+    color: white;
+    background: #A259FF;
+    border: none;
+    border-radius: 20px;
+    display: inline-flex;
+    height: 60px;
+    padding: 0px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+.button-secondary:hover {
+    background: rgba(193, 4, 255, 0.94);
+    cursor: pointer;
+}
+.button-tertiary {
+    color: white;
+    background: #A259FF;
+    border: none;
+    border-radius: 20px;
+    display: inline-flex;
+    height: 48px;
+    padding: 0px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+.button-tertiary:hover {
+    background: rgba(193, 4, 255, 0.94);
+    cursor: pointer;
+}
+.button-quaternary {
+    color: white;
+    background: #A259FF;
+    border: none;
+}
+.button-container {
+    display: flex;
+    width: 224px;
+    height: 60px;
+    padding: 0px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: #A259FF;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+.button-container:hover {
+    background: rgba(193, 4, 255, 0.94);
+    cursor: pointer;
+}
+.button-View-Rankings {
+    display: flex;
+    width: 247px;
+    height: 60px;
+    padding: 0px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 20px;
+    border: 3px solid #A259FF;
+    color: white;
+}
+.button-View-Rankings:hover {
+    background: rgba(193, 4, 255, 0.94);
+    border: none;
+}
+.subscribe-container {
+    display: flex;
+    border-radius: 20px;
+    overflow: visible;
+    width: fit-content;
+    background-color: transparent; /* màu nền tổng */
+}
+
+.email-input {
+    padding: 12px 26px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 20px 0 0 20px;
+    background: white;
+
+}
+
+.subscribe-button {
+    background-color: #a259ff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    z-index: 1000;
+    margin-left: -18px;
+}
+
+.subscribe-button:hover {
+    background-color: #9127ff;
+}

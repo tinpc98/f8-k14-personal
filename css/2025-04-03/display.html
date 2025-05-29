@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    span {
+      margin: 10px;
+      border: 1px solid red;
+    }
+    p {
+      margin: 10px;
+      border: 1px solid red;
+    }
+    ul {
+      background-color: black;
+    }
+    ul li {
+      color: white;
+      display: inline-block;
+      padding: 8px;
+    }
+    ul li:hover ~ .dropdown {
+      display: block;
+    }
+    .dropdown {
+      display: none;
+      color: white;
+      width: 100px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>text 01</h1>
+    <p>text span</p>
+    <span>span text 02</span>
+    <ul>
+      <li id="k1">home</li>
+      <li id="k2">about</li>
+      <li id="k3">contact</li>
+      <li id="k4">blog</li>
+      <div class="dropdown">
+        <div class="item"> item 1</div>
+        <div class="item"> item 2</div>
+        <div class="item"> item 2</div>
+      </div>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*.container > ul > li {*/
+        /*    color: red;*/
+        /*}*/
+
+        ul>span +li{
+               color: red;
+           }
+        .container form input[name="username"] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Hoc Lap Trinh</h1>
+    <form>
+        <span></span>
+        <input name="username" type="text" placeholder="username">
+        <br>
+        <span>dien vao day di em</span>
+        <br>
+        <input name="pass" type="password" placeholder="pass">
+
+    </form>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li>Js</li>
+        <li>Ts</li>
+        <li>Docker</li>
+        <li>K8s</li>
+    </ul>
+</div>
+<style>
+    /*.item{*/
+    /*    color: red;*/
+    /*}*/
+    /*ghi chu
+    '  ' anf chid (tất cả các con cháu
+    '>' con trực tiếp
+    '~' cùng cấp
+    'selector 1,selector 2,selector 3-> all of selector have trong css code
+    */
+
+
+    /*ul > span ~ li , footer ul li {*/
+    /*    color: green;*/
+    /*    font-weight: 600;*/
+    /*}*/
+
+
+</style>
+<div class="footer">
+    <ul>
+        <span>test</span>
+        <li class="item">html</li>
+        <li>f8</li>
+        <li>f9</li>
+        <li>f10</li>
+    </ul>
+</div>
+</body>
+</html>

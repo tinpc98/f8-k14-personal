@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    input, button {
+        font-size: 24px;
+        padding: 12px;
+    }
+</style>
+<body>
+    <input placeholder="name" name="name"/>
+    <button>Get Value</button>
+    <span></span>
+
+    <script>
+        const inputE = document.querySelector('input[name="name"]')
+        const buttonE = document.querySelector('button')
+        const spanE = document.querySelector('span')
+
+        buttonE.addEventListener('click', (e) => {
+            let val = inputE.value.replaceAll("<", "&lt;")
+            val = val.replaceAll(">", "&gt;")
+            spanE.innerHTML = val
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Form</h1>
+<form
+        action="https://api-gateway.fullstack.edu.vn/action_page.php"
+        method="post">
+    <label for="name"> Nhap ho & ten</label>
+    <input id="name" placeholder="ho va ten" name="name" type="text" required/>
+    <br>
+    <label for="pass"> Nhap pass</label>
+    <input id="pass" placeholder="pass" name="pass" type="password" value="12345678" disabled/>
+    <br>
+    <label for="age"> Nhap tuoi</label>
+    <input id="age" placeholder="tuoi" name="age" type="number"/>
+    <br>
+    <label for="adress"> Nhap dia chi</label>
+    <input id="adress" placeholder="dia chi" name="address"/>
+    <br>
+    <label for="email"> Nhap dia chi email</label>
+    <input id="email" placeholder="email" name="email" type="email" value="hoang.dt@gmail.com" disabled/>
+    <br>
+
+    <label> Nhap gender</label>
+    <label for="male">male</label>
+    <input id="male" name="gender" value="male" type="radio" checked="checked"/>
+    <label for="female">female</label>
+    <input id="female" name="gender" value="female" type="radio"/>
+    <br>
+    <label>nhap lang:</label>
+    <label for="vn">Vn</label>
+    <input id="vn" value="vn" type="checkbox" name="lang[]" checked/>
+    <label for="en">En<label/>
+    <input id="en" value="en" type="checkbox" name="lang[]"/>
+    <label for="jp">Jp<label/></label>
+    <input id="jp" value="jp" type="checkbox" name="lang[]"/>
+    <br>
+    <label> ban hoc code o dau</label>
+        <select name="center">
+            <option value="f8">f8</option>
+            <option value="f12">f12</option>
+            <option value="f88">f88</option>
+        </select>
+        <br>
+    <label>xxx</label>
+    <input type="range" min="0" max="100" name="salary">
+
+        <br>
+    <label>Mo ta</label>
+        <textarea name="descripion" rows="5" placeholder="descripion">
+hello anh em
+an ngon khong</textarea>
+        <br>
+        <input type='submit'>
+<form/>
+<body/>
+<html/>

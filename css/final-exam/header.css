@@ -1,68 +1,80 @@
-header nav ul li {
-    list-style: none;
-}
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-}
-.header-logo {
-    color: white;
-}
-button {
-    border-radius: 20px;
-    background: var(--Call-to-Action, #A259FF);
+.container {
     display: flex;
-    height: 60px;
-    padding: 0px 30px;
-    justify-content: center;
+    padding: 20px 50px;
+    gap: 10px;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    align-self: stretch;
     color: white;
+    font-family: "Space Mono";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    text-transform: capitalize;
 }
-.menu-checkbox {
-    display: none;
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
-.menu-icon {
-    display: none;
-    font-size: 26px;
-    color: white;
+.d-flex {
+    align-items: center;
+    list-style: none;
     cursor: pointer;
+    gap: 20px;
+}
+.d-flex1 {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    gap: 20px;
+}
+.d-flex1 a {
+    text-decoration: none;
+    color: #FFF;
+    text-align: center;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    margin-left: auto;
+}
+.tablet-menu {
+    display: none;
 }
 @media screen and (max-width: 991px) {
-    .menu-icon {
-        display: inline-block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        z-index: 1000;
-    }
-    .header-menu {
-        display: none;
-        background-color: #2c2c2c;
-        position: fixed;
-        top: 60px;
-        right: 0;
-        height: calc(100vh - 60px);
-        width: 300px;
-        padding-top: 60px;
-        z-index: 1000;
-    }
-    .header-menu ul {
-        list-style: none;
-        margin: 0;
-        padding: 0 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .menu-checkbox:checked + .menu-icon + .header-menu {
+    .tablet-menu {
         display: block;
-
+        margin-left: auto;
+    }
+    .d-flex {
+        font-size: 32px;
+    }
+    .d-flex1 {
+        display: none;
     }
     .menu-checkbox {
         display: none;
     }
 }
 @media screen and (max-width: 767px) {
+    .container {
+        display: flex;
+    }
+    .tablet-menu {
+        display: block;
+        margin-left: auto;
+        font-size: 22px;
+
+    }
+    .d-flex {
+        font-size: 20px;
+    }
+
 
 }

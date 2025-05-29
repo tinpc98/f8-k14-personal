@@ -1,15 +1,20 @@
 .main2-header {
-    padding-left: 50px;
+    padding-left: 236px;
     padding-top: 80px;
     padding-bottom: 60px;
 }
 .main2-container {
-    display: flex;
-    margin: auto;
-    flex-direction: initial;
-    justify-content: center;
-    gap: 30px;
-    padding-bottom: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 236px 0 236px;
+    transition: transform 0.3s ease;
+}
+.Disco-Machines:hover,
+.Magic-Mushrooms:hover,
+.Dsgn-Animals:hover {
+    transform: scale(1.03);
+    cursor: pointer;
 }
 .main2-thumbnails {
     display: flex;

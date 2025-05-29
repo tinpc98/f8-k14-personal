@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  .my-Border {
+    width: 200px;
+    /*height: 100px;*/
+    background: white;
+    border: 1px solid blue;
+    /*border-width: 5px 10px 15px 20px;*/
+    /*border-style: solid;*/
+    /*border-color: blue green yellow black;*/
+    /*display: inline-block;*/
+    /*border-width: 0px 50px 50px 50px; !*tam giac*!*/
+    /*border-style: solid;*/
+    /*border-color: transparent  transparent greenyellow transparent;*/
+    border-radius: 5px; /* ve hinh tron*/
+    position: relative;
+    box-shadow: 10px 10px 5px #888888; /* độ nhòe*/
+  }
+  .avatar {
+      background: fuchsia;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      text-align: center;
+      color: white;
+    }
+  .container > div {
+    display: inline-block;
+  }
+  .my-border1 {
+    width: 0;
+    border-width: 5px 5px 5px 0;
+    border-style: solid;
+    border-color:  transparent blue transparent transparent;
+    position: absolute;
+    left: -5px;
+    top: 4px;
+  }
+  /*.container > div > .my-border1 {*/
+  /*  display: inline-block;*/
+  /*  position: absolute;*/
+  /*  left: -5px;*/
+  /*  top: 4px;*/
+  /*}*/
+</style>
+<body>
+  <div class="container">
+    <div class="avatar"> A</div>
+    <div class="my-Border">
+      <div class="my-border1"></div>
+      <span>hello anh em</span>
+
+    </div>
+  </div>
+
+</body>
+</html>
