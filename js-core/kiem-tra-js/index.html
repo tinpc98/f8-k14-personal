@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Nhân Viên</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+    <style>
+        .container {
+            width: 980px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        input, button {
+            margin: 10px 5px;
+            padding: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid #aaa;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .mdi-calendar-remove {
+            color: orange;
+            margin-right: 4px;
+        }
+        .mdi-office-building {
+            color: green;
+            margin-right: 4px;
+        }
+        .button {
+            background: green;
+            border:  none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <input type="text" id="searchInput" placeholder="Search employee">
+    <input type="text" id="teamInput" placeholder="Teams">
+    <button class="button" onclick="renderSchedule()">Create Schedule</button>
+    <div class="table">
+        <table id="schedule">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Teams
+    const teams = [
+        { id: 1, name: "Reactjs" },
+        { id: 2, name: "Expressjs" },
+        { id: 3, name: "Nestjs" }
+    ];
+
+    // Employees
+    const employees = [
+        { id: 1, name: "Nguyen Minh Viet", teamId: 1 },
+        { id: 2, name: "Tran Thuy Quynh", teamId: 2 },
+        { id: 3, name: "Tran Cong Tin", teamId: 1 },
+        { id: 4, name: "Nguyen Nam Tao", teamId: 2 },
+        { id: 5, name: "Bui Kong Minh", teamId: 3 }
+    ];
+
+    // Absence Times
+    const absences = [
+        { id: 1, employeeId: 1, date: "mon", time: "8:00-9:00" },
+        { id: 2, employeeId: 1, date: "tue", time: "16:00-17:00" },
+        { id: 3, employeeId: 3, date: "thu", time: "11:00-12:00" },
+        { id: 4, employeeId: 2, date: "wed", time: "11:00-12:00" },
+        { id: 5, employeeId: 5, date: "fri", time: "9:00-11:00" },
+        { id: 6, employeeId: 3, date: "mon", time: "8:00-9:00" }
+    ];
+
+    const days = ['mon', 'tue', 'wed', 'thu', 'fri'];
+
+    function renderSchedule(keyword = '', teamKeyword = '' ) {
+        const tableBody = document.querySelector('#schedule tbody');
+        tableBody.innerHTML = '';
+
+        employees
+            .filter(emp => {
+                const matchName = emp.name.toLowerCase().includes(keyword);
+                const teamName = teams.find(team => team.id === emp.teamId)?.name.toLowerCase() || '';
+                const matchTeam = teamName.includes(teamKeyword);
+                return matchName && matchTeam;
+            }) //Lọc theo keyword và teamName
+            .forEach(employee => {
+                const row = document.createElement('tr');
+                const teamName = teams.find(team => team.id === employee.teamId)?.name || "Unknown";
+
+                row.innerHTML = `<td>${employee.name}</td>`;
+                row.innerHTML += `<td>${teamName}</td>`;
+
+                days.forEach(day => {
+                    const absence = absences.find(a => a.employeeId === employee.id && a.date === day);
+                    const display = absence
+                        ? `<span><i class="mdi mdi-calendar-remove"></i> ${absence.time}</span>`
+                        : '<span><i class="mdi mdi-office-building"></i> Full Day</span>';
+
+                    row.innerHTML += `<td>${display}</td>`;
+                });
+
+                tableBody.appendChild(row);
+            }); // lấy dữ liệu từ object
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+        renderSchedule(); // in bảng ra màn hình
+    });
+
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const keyword = this.value.toLowerCase();
+        const teamKeyword = document.getElementById('teamInput').value.toLowerCase();
+        renderSchedule(keyword, teamKeyword); // tìm kiếm theo tên
+    });
+    document.getElementById('teamInput').addEventListener('input', function () {
+        const teamKeyword = this.value.toLowerCase();
+        const keyword = document.getElementById('searchInput').value.toLowerCase();
+        renderSchedule(keyword, teamKeyword); // tìm kiếm theo team
+    })
+
+
+</script>
+</body>
+</html>
