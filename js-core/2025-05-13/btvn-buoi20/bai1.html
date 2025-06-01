@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            width: 980px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid #aaa;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="table">
+        <table id="schedule" border="1">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên</th>
+                <th>Tuổi</th>
+                <th>Email</th>
+                <th>Chức Vụ</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+<script>
+    const data = [
+        { id: 1, name: 'Nguyễn Văn A', age: 22, email: 'a@example.com' },
+        { id: 2, name: 'Trần Thị B', age: 21, email: 'b@example.com' },
+        { id: 3, name: 'Lê Văn C', age: 23, email: 'c@example.com' }
+    ];
+
+    const positions = [
+        { id: 1, position: 'Giám đốc' },
+        { id: 2, position: 'Nhân viên' },
+        { id: 3, position: 'Quản lý' }
+    ];
+    const positionMap = {};
+    for (const pos of positions) {
+        positionMap[pos.id] = pos.position;
+    }
+    const mergedData = data.map(person => {
+        return {
+            ...person,
+            position: positionMap[person.id ] ||'chưa có chức vụ'
+        }
+    })
+    const tbody = document.querySelector("#schedule tbody");
+    mergedData.forEach(person => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${person.id}</td>
+            <td>${person.name}</td>
+            <td>${person.age}</td>
+            <td>${person.email}</td>
+            <td>${person.position}</td>`
+        tbody.appendChild(row);
+    })
+</script>
+</body>
+</html>

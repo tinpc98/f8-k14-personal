@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <p>P 1</p>
+    <section>
+        Section 1
+        <p>P 2</p>
+        <div>Div 3</div>
+    </section>
+<script>
+    function countElementsByTag(tagName) {
+        if (typeof tagName !== 'string') return 0
+        return document.getElementsByTagName(tagName).length
+
+        console.log(countElementsByTag("div"))
+        console.log(countElementsByTag('p'))
+        console.log(countElementsByTag('section'))
+        console.log(countElementsByTag('header'))
+        console.log(countElementsByTag(123));
+    }
+</script>
+</body>
+</html>
