@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    padding: 40px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    padding: 24px 0;
+    transition: all 0.4s ease;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #ccc;
+    transform: translateX(-50%);
+}
+
+.timeline-content, .timeline-year {
+    width: 45%;
+    transition: all 0.4s ease;
+}
+
+.timeline-content {
+    text-align: right;
+}
+
+.timeline-content .title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.label {
+    background: whitesmoke;
+    color: black;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.timeline-year {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    text-align: left;
+}
+
+/* --- Hover chuyển vị trí --- */
+.timeline-item:hover .timeline-content {
+    order: 2;
+    text-align: left;
+}
+
+.timeline-item:hover .timeline-year {
+    order: 1;
+    text-align: right;
+}
+
+.timeline-item:hover .label {
+    background: #a1673e;
+    color: white;
+}
+.img-content img {
+    position: absolute;
+
+}
+.text-content {
+    position: relative;
+    border: 5px solid black;
+    width: 180px;
+    height: 300px;
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    background: blue;
+    color: white;
+    top: 190px;
+    left: -90px;
+}
