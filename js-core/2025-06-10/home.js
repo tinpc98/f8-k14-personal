@@ -6,7 +6,7 @@ const onMounted = () => {
         window.location.href = 'login.html';
     }
 
-    const posts = await get ('post/')
+    const posts =  get ('post/')
 }
 
 

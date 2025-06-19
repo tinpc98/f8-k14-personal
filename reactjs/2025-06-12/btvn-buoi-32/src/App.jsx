@@ -12,7 +12,7 @@ function App() {
                 const evalResult = eval(input);
                 setResult(evalResult);
             } catch (error) {
-                setResult('Lỗi');
+                setResult('loi');
             }
         } else if (value === 'DEL') {
             setInput('');
