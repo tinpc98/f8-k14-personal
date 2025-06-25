@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "viet",
+      "age": 23,
+      "address": "Hà Nội"
+    },
+    {
+      "id": "1",
+      "name": "viet",
+      "age": 23,
+      "address": "Hà Nội"
+    },
+    {
+      "id": "1",
+      "name": "viet",
+      "age": 23,
+      "address": "Hà Nội"
+    },
+    {
+      "id": null,
+      "name": "dang tien hoang",
+      "age": "33",
+      "address": "ha noi"
+    }
+  ]
+}
