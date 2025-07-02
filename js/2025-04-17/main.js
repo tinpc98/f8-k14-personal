@@ -1,145 +1,101 @@
-// document.write('<h1>hello anh em</h1>')
-// document.write('hello anh em')
-// console.log('hello anh em')
-// console.log('1234', 5678 ) //trong dấu '' là ký tự, khoong trong dau '' là so
-// console.log(1+2, 3-6, 3*6, 9/0)
+// ==========================
+// 1. Khai báo biến
+// ==========================
+var a = 10;
+let b = 2;
+let c = 'vanh';
+const d = 3;
 
-// this is comment
-/*
-* this is comment
-* https://asciiflow.com/#/
-* biến: variable
-* use to store any temp value(lưu dữ liệu tạm thời)
-* store -> ram (lưu tại ram)
-* reset -> remove (reset sẽ biến mất)
-* declear a variable -> 4 way (khai báo biến có 4 cách)
-* var(<2015)
-* let / const (>2015 - EC6)
- */
+console.log('a:', a);
+console.log('b:', b);
+console.log('c:', c);
+console.log('d:', d);
 
-// khai báo biến
-/*var a
-a = 1
-//initial variable (khởi tạo biến)
-var b = 1
-let c = 1
-const d = 1 //hằng so
-a = a + 1
-c = a + b
-console.log(a, b, c, d)
-*/
-/*
-* operator + - * / ( toán tử)
-* number + number = number
-* number - number = number
-* number * number = number
-* number / number = number
-*
-* RAW STRING
-* string + string = string
-* string - string = NaN (Not A Number) lỗi
-* string * string = NaN (Not A Number) lỗi
-* string / string = NaN (Not A Number) lỗi
-*
-* STRING LINK NUMBER
-* string + string = string
-* string - string = number
-* string * string = number
-* string / string = number
-*
-* (*) JS cố gắng đưa phép toán về phép toán hợp lệ -> không nên phụ thuộc vào nó
-* */
+// ==========================
+// 2. Toán tử số học
+// ==========================
+console.log('a + b =', a + b);
+console.log('a - b =', a - b);
+console.log('a * b =', a * b);
+console.log('a / b =', a / b);
 
-/*
-* lũy thừa
-* a ** 2 = a * a
-* a ** 3 = a * a * a
-* căn
-* can bậc 2: a ** (1/2)
-* căn bậc 3: a ** (1/3)
-*
-* chia lấy dư: 10 % 3 = 1
-*
-* tăng đơn vị của a
-*
-* */
-// let a = 5
-// a++
-// ++a
-// console.log(a++)  //chọn a trước -> sau đó tăng 1 đơn vị
-// console.log(++a) //tăng a trước -> sau đó mới chọn a
-/*
-*phép nhân a vs chính nó
-* a = a + 5 -> a += 5
-* a = a * 5 -> a *= 5
- */
+// ==========================
+// 3. Toán tử với chuỗi
+// ==========================
+let name = 'viet_anh';
+let vanh = 'ha_';
 
-/*
-*toán tử so sánh
-* so sánh bằng: ==/=== (* nên  dùng ===)
-* lớn hơn: >
-* bé hơn: <
-* lớn hơn hoặc bằng: >=
-* bé hơn hoặc bằng: <=
-* so sánh khác: !=/!===
- */
+console.log('Nối chuỗi:', name + vanh);
+console.log('Trừ chuỗi:', name - vanh); // NaN
+console.log('Nhân chuỗi:', name * vanh); // NaN
+console.log('Chia chuỗi:', name / vanh); // NaN
 
-/*
-*data type ( dữ liêu)
-* string ( chuỗi)
-* number ( số)
-* bool
-* null / undefine / unknown
-* objeck
-* function
-* để kiểm tra data type ta dùng
-* typeof <variable>
- */
+// ==========================
+// 4. String chứa số
+// ==========================
+let e = '12324';
+let f = '123';
 
-// const a = 'test'
-// console.log(typeof a)
+console.log('e + f =', e + f); // Nối chuỗi
+console.log('e - f =', e - f); // Tự ép kiểu
+console.log('e * f =', e * f);
+console.log('e / f =', e / f);
 
-/*
-*concat: convert data type
-*DataType(<variable>)
-*
-* string <-> number -> ok
-* string -> bool (số + chữ)
-*    số ký tự >0 -> true ngược lại false
-*
-* number -> bool
-*   0 -> fase else true
-*
-* bool -> string
-* true -> 'true'
-* false -> 'fales'
-*
-* bool -> number
-* true -> 1
-* false -> 0
- */
-let a = '123'
-a = Boolean(a)
-console.log(a)
+// ==========================
+// 5. Lũy thừa
+// ==========================
+console.log('a ** 2 =', a ** 2);
+console.log('a ** 3 =', a ** 3);
+console.log('Căn bậc hai của a =', a ** (1 / 2));
 
+// ==========================
+// 6. Chia lấy dư
+// ==========================
+console.log('a % d =', a % d);
+console.log('a % b =', a % b);
 
+// ==========================
+// 7. Toán tử tăng giảm
+// ==========================
+let g = 10;
+console.log('g++ + 5 =', g++ + 5); // g = 10 + 5 = 15, rồi g tăng thành 11
+console.log('++g + 5 =', ++g + 5); // g = 12 + 5 = 17
 
+// ==========================
+// 8. Kiểm tra kiểu dữ liệu
+// ==========================
+let h = 10;
+let k = 15;
 
+console.log('h > k:', typeof (h > k)); // boolean
+console.log('Kiểu của a:', typeof a); // number
 
+// ==========================
+// 9. Ép kiểu
+// ==========================
 
+// String -> Number
+let x = 'abcdfs';
+x = Number(x);
+console.log('String "abcdfs" thành số:', x); // NaN
 
+// String -> Boolean
+let y = '0';  // chuỗi khác rỗng => true
+let z = '';   // chuỗi rỗng => false
 
+console.log('Boolean("0"):', Boolean(y)); // true
+console.log('Boolean(""):', Boolean(z)); // false
 
+// Boolean -> Number
+let i = true;
+let j = false;
 
+console.log('Number(true):', Number(i)); // 1
+console.log('Number(false):', Number(j)); // 0
 
+// Boolean -> String
+let n = true;
+let o = false;
 
-
-
-
-
-
-
-
-
-
-
+console.log('String(true):', String(n)); // "true"
+console.log('String(false):', String(o)); // "false"
