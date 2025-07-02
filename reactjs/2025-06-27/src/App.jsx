@@ -1,6 +1,7 @@
 import { EditableTable } from './components'
 import {useState} from "react";
 
+
 const columns = [
   { name: 'product'},
   { name: 'quantity'},
@@ -29,6 +30,17 @@ function App() {
     comment: 'comment text 2',
   }
   ])
+
+  const onInput = ({rowsIndex, columnsIndex, row, columns, value}) =>{
+    console.log('vao day chua')
+    const newData = () => [...row]
+    newData[rowsIndex] [columns[columnsIndex].name] = value
+    setRows(newData)
+  }
+  const contextValue = {
+    rows: 0,
+    columns: 0,
+  }
   return (
     <>
       <EditableTable columns={columns} rows={rows}/>

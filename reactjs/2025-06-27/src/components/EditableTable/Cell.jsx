@@ -1,7 +1,7 @@
 import {useContext, useRef} from 'react'
 import {TableContext} from "./const.js";
 
-export default function ({row, column}) {
+export default function ({row, column, rowIndex, columnIndex}) {
 
     const injector = useContext(TableContext)
 
@@ -18,11 +18,10 @@ export default function ({row, column}) {
             const top = cellRef.current.offsetTop;
 
             setCursor({
-                ...cursor, width, height, top, left
+                ...cursor, width, height, top, left, rowIndex, columnIndex
             })
         }
     }
-
     return (
         <td
         onClick={onClick}
