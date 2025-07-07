@@ -1,11 +1,11 @@
 import {useDispatch, useSelector} from "react-redux";
+import Search from "../../components/Search/index.jsx";
+import ProductTable from "../productTable/index.jsx";
+import {selectFilteredProduct} from "../../store/selectors.js";
 
-export default function (){
+export default function ProductList({onEdit}) {
     const dispatch = useDispatch()
-    const products = useSelector((state) => {
-        if(state.searchStr) return state.products.filter(p => p.name.includes(state.searchStr))
-        return state.products
-    })
+    const products = useSelector(selectFilteredProduct)
 
     const onDelete = (id) => {
         dispatch({
@@ -16,16 +16,25 @@ export default function (){
 
     return (
         <>
-            <ul>
-                {
-                    products.map(product => {
-                        return <li key={product.id}>
-                            <span>{product.name}</span>
-                            <button onClick={onDelete}>del</button>
-                        </li>
-                    })
-                }
-            </ul>
+            <h2>Danh Sach San Pham</h2>
+            <table>
+                <tbody>
+                {products.map(product => (
+                    <tr key={product.id}>
+                        <td>{product.name}</td>
+                        <td>{product.price}</td>
+                        <td>{product.quantity}</td>
+                        <td>{product.unit}</td>
+                    </tr>
+                ))}
+                </tbody>
+
+            </table>
+            <Search/>
+            <ProductTable onEdit={onEdit}/>
         </>
     )
 }
+
+
+
