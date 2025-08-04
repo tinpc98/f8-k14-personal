@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: docker-k14-web-v4
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/web
+    volumes:
+      - './web:/app/web'
+    ports:
+      - "5100:5173"
+    command:
+      - npm
+      - run
+      - dev
+
+  next:
+    container_name: docker-k14-next-v4
+    image: node:24-alpine3.21
+    working_dir: /app/next
+    volumes:
+      - './next:/app/next'
+    ports:
+      - "3000:3000"
+    command:
+      - npm
+      - run
+      - dev
+
+  db:
+    container_name: docker-k14-db
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: default
+    ports:
+      - "5000:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+  api:
+    container_name: docker-k14-api
+    image: node:24-alpine3.21
+    working_dir: /app/api
+    volumes:
+      - './api:/app/api'
+    ports:
+      - "4000:4000" # thêm nếu bạn cần truy cập từ bên ngoài
+    command:
+      - npm
+      - run
+      - dev
+    environment:
+      DB_HOST: docker-k14-db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASS: postgres
+      DB_NAME: default
+    depends_on:
+      - db

@@ -1,9 +1,9 @@
 services:
   web:
-    container_name: docker-k14-web
+    container_name: docker-k14-web-v1
     #    image: docker-k14-web
     build:
-      context: ./web
+      context: .
       dockerfile: Dockerfile
     #    image: node:24-alpine3.21
     working_dir: /app/web
@@ -17,7 +17,7 @@ services:
       - dev
 
   next:
-    container_name: docker-k14-next
+    container_name: docker-k14-next-v1
     image: node:24-alpine3.21
     working_dir: /app/next
     volumes:
@@ -27,7 +27,7 @@ services:
     command: ['npm', 'run', 'dev']
 
   db:
-    container_name: docker-k14-db
+    container_name: docker-k14-db-v1
     image: postgres:17
     environment:
       POSTGRES_USER: postgres
