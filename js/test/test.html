@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Danh Sach Cong Ty</h1>
+    <script>
+        const companies = [
+            { id: 1, name: "Tech Corp" },
+            { id: 2, name: "Finance Inc" },
+            { id: 3, name: "Health Plus" }
+        ];
+        const employees = [
+            { name: "Alice", companyId: 1, salary: 15000000 },
+            { name: "Bob", companyId: 1, salary: 18000000 },
+            { name: "Charlie", companyId: 2, salary: 22000000 },
+            { name: "David", companyId: 2, salary: 20000000 },
+            { name: "Eve", companyId: 3, salary: 25000000 }
+        ];
+        function getCompanyData(companies, employees) {
+            return companies.map(company => {
+                const companyEmployee = companies.filter(emp => emp.companyId === company.id);
+                const averageSalary = companyEmployee.reduce((sum, emp) => sum + emp.salary, 0);
+
+                return {
+                name: company.name,
+                employees: companyEmployee,
+                averageSalary
+            }
+        })
+    }
+
+        const result = getCompanyData(companies, employees);
+
+        function renderTable(data) {
+            let html =
+            <table>
+                <tr>
+                    <th>Ten Cong Ty</th>
+                    <th>Nhan Vien</th>
+                    <th>Luong Trung Binh</th>
+                </tr>
+                ;
+                
+        }
+    </script>
+</body>
+</html>
